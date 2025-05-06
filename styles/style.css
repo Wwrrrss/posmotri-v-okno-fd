@@ -53,28 +53,23 @@ ol {
 }
 
 .content {
-  margin-top: 333px;
   width: 1140px;
   height: 534px;
   display: flex;
   align-items: end;
   gap: 30px;
-}
-
-.result {
+  align-self: center;
 }
 
 .result__video-container {
   width: 711px;
   height: 386px;
   margin-bottom: 16px;
+  position: relative;
 }
 
 .result__video {
   width: 100%;
-}
-
-.content__details {
 }
 
 .search-form {
@@ -91,10 +86,14 @@ ol {
 .content__list-container {
   height: 298px;
   overflow: scroll;
+  position: relative;
 }
 
 .content__list-item {
+  display: flex;
   gap: 30px;
+  padding-left: 3px;
+  padding-right: 3px;
 }
 
 .content__video-card {
@@ -105,12 +104,28 @@ ol {
 .content__video-card-thumbnail {
   width: 194px;
   height: 103px;
-  object-fit: ;
+  object-fit: contain;
   object-position: center;
 }
 
 .content__video-card-description-container {
   flex-grow: 1;
+}
+
+.content__card-link_current {
+  background-color: rgba(84, 80, 80, 1);
+}
+
+.content__card-link:hover {
+  text-decoration: underline;
+}
+
+.content__card-link:focus {
+  outline: none;
+}
+
+.content__card-link:focus-visible {
+  outline: 1px solid white;
 }
 
 .search-form__fieldset-title {
@@ -134,6 +149,7 @@ ol {
 .content__card-link {
   text-decoration: none;
   color: white;
+  cursor: pointer;
 }
 
 .content__video-card-title {
@@ -161,4 +177,101 @@ ol {
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
   white-space: nowrap;
+}
+
+form {
+  display: flex;
+}
+
+fieldset {
+  border: 0;
+}
+
+input {
+  border: 1px white solid;
+  background: transparent;
+  color: white;
+  border-left: none;
+  border-right: none;
+  appearance: none;
+  cursor: pointer;
+}
+
+.search-form__label:has(:focus-visible) {
+  outline: 1px solid white;
+}
+
+/* СТИЛИЗАЦИЯ ЧЕКБОКСА */
+
+.search-form__label {
+  background: transparent;
+  display: flex;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.search-form__checkbox-list {
+  display: flex;
+  gap: 15px;
+}
+
+.search-form__pseudo-checkbox {
+  width: 22px;
+  height: 22px;
+  border: 1px solid white;
+}
+
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
+  content: '';
+  display: block;
+  background-color: white;
+  margin: 1px;
+  width: 18px;
+  height: 18px;
+}
+
+.search-form__pseudo-checkbox:has(:focus-visible) {
+  outline: 1px solid white;
+}
+
+.search-form__label-text {
+  margin-left: 5px;
+}
+
+.search-form__label:hover .search-form__label-text {
+  text-decoration: underline;
+}
+
+.button {
+  border: 1px solid white;
+  background: transparent;
+  font-weight: 700;
+  font-size: 18px;
+  color: white;
+  height: 34px;
+  cursor: pointer
+}
+
+.search-form__submit-button {
+  width: 194px;
+  align-self: end;
+}
+
+.more-button {
+  width: 100%;
+}
+.button:hover {
+  text-decoration: underline;
+}
+
+.button:active {
+  background-color: rgb(84 80 80 / 1);
+}
+
+.button:focus-visible {
+  outline: 1px solid white;
+}
+
+.button:focus {
+  outline: none;
 }
