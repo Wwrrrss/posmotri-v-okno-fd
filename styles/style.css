@@ -18,6 +18,7 @@ html {
   background-color: #1b1919;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 h1,
@@ -54,7 +55,6 @@ ol {
 
 .content {
   width: 1140px;
-  height: 534px;
   display: flex;
   align-items: end;
   gap: 30px;
@@ -70,6 +70,9 @@ ol {
 
 .result__video {
   width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
 }
 
 .search-form {
@@ -85,7 +88,7 @@ ol {
 
 .content__list-container {
   height: 298px;
-  overflow: scroll;
+  overflow: auto;
   position: relative;
 }
 
@@ -99,6 +102,7 @@ ol {
 .content__video-card {
   display: flex;
   justify-content: start;
+  width: 390px;
 }
 
 .content__video-card-thumbnail {
@@ -139,31 +143,34 @@ ol {
   font-size: 75px;
   line-height: 100%;
   text-transform: uppercase;
-  font-family: 'Oswald';
+  font-family: 'Oswald', sans-serif;
 }
 
 .content__accent {
-  opacity: 0.5;
+  color: rgb(84 80 80 / 1);
 }
 
 .content__card-link {
   text-decoration: none;
   color: white;
-  cursor: pointer;
 }
 
 .content__video-card-title {
-  font-family: 'Oswald';
+  font-family: 'Oswald', sans-serif;
   font-size: 30px;
   font-weight: 700;
   text-transform: uppercase;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 195px;
 }
 
 .content__video-card-description {
   font-weight: 400;
   line-height: 89%;
-  width: 196px;
-  height: 17px; 
+  max-width: 196px;
+  width: 100%;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -187,7 +194,9 @@ fieldset {
   border: 0;
 }
 
-input {
+.search-form__textfield {
+  width: 225px;
+  padding: 0;
   border: 1px white solid;
   background: transparent;
   color: white;
@@ -195,6 +204,10 @@ input {
   border-right: none;
   appearance: none;
   cursor: pointer;
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 100%;
 }
 
 .search-form__label:has(:focus-visible) {
@@ -206,7 +219,9 @@ input {
 .search-form__label {
   background: transparent;
   display: flex;
+  align-items: center;
   width: fit-content;
+  padding: 0 2px;
   cursor: pointer;
 }
 
@@ -216,8 +231,8 @@ input {
 }
 
 .search-form__pseudo-checkbox {
-  width: 22px;
-  height: 22px;
+  width: 19px;
+  height: 19px;
   border: 1px solid white;
 }
 
@@ -226,12 +241,8 @@ input {
   display: block;
   background-color: white;
   margin: 1px;
-  width: 18px;
-  height: 18px;
-}
-
-.search-form__pseudo-checkbox:has(:focus-visible) {
-  outline: 1px solid white;
+  width: 15px;
+  height: 15px;
 }
 
 .search-form__label-text {
@@ -243,8 +254,10 @@ input {
 }
 
 .button {
+  margin-top: 30px;
   border: 1px solid white;
   background: transparent;
+  font-family: 'Fira Sans Condensed', sans-serif;
   font-weight: 700;
   font-size: 18px;
   color: white;
